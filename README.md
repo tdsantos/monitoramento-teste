@@ -1,57 +1,57 @@
-# Sistema de Monitoramento de Transações
+# Transaction Monitoring System
 
-## Introdução
-Este projeto implementa um sistema de monitoramento simples com alertas em tempo real para transações financeiras. Ele inclui um endpoint para receber dados de transação, processamento e análise dos dados, detecção de anomalias e sistema de notificação de alertas.
+## Introduction
+This project implements a simple monitoring system with real-time alerts for financial transactions. It includes an endpoint for receiving transaction data, data processing and analysis, anomaly detection, and alert notification system.
 
-## Estrutura do Projeto
-- `endpoint.py`: API Flask para receber e processar dados de transação.
-- `db_secrets.py`: Variáveis de ambiente para configuração do banco de dados.
-- `grafico_vendas.py`: Script para gerar gráficos a partir dos dados das transações.
-- `monitor.py`: Script para monitorar e detectar anomalias nas transações.
-- `notification.py`: Script para enviar notificações de anomalias.
-- `send_request.sh`: Script para enviar requisições de teste para a API.
-- `docker-compose.yml`: Arquivo de configuração do Docker Compose.
-- `requirements.txt`: Dependências do projeto.
-- `README.md`: Documentação do projeto.
+## Project Structure
+- `endpoint.py`: Flask API for receiving and processing transaction data.
+- `db_secrets.py`: Environment variables for database configuration.
+- `grafico_vendas.py`: Script to generate graphs from transaction data.
+- `monitor.py`: Script to monitor and detect anomalies in transactions.
+- `notification.py`: Script to send anomaly notifications.
+- `send_request.sh`: Script to send test requests to the API.
+- `docker-compose.yml`: Docker Compose configuration file.
+- `requirements.txt`: Project dependencies.
+- `README.md`: Project documentation.
 
-## Configuração
+## Settings
 
-### 1. Instalar Dependências
+### 1. Install Dependencies
 
 pip install -r requirements.txt
 
 
-### 2. Configurar Banco de Dados
+### 2. Configure Database
 
-1. Crie um banco de dados MySQL.
-2. Configure as variáveis de ambiente em `db_secrets.py`.
-3. Crie a tabela importe os dados checkout_1.csv, checkout_2.csv, transactions_1.csv e transactions_2.csv conforme especificado.
+1. Create a MySQL database.
+2. Configure environment variables in `db_secrets.py`.
+3. Create the table and import the checkout_1.csv, checkout_2.csv, transactions_1.csv and transactions_2.csv data as specified.
 
-### 3. Executar a API
+### 3. Run the API
 
 python endpoint.py
 
 
-### 4. Enviar Dados de Transação
-Execute o script `send_request.sh` para enviar dados de teste para a API:
+### 4. Send Transaction Data
+Run the `send_request.sh` script to send test data to the API:
 
 bash send_request.sh
 
 
-### 5. Gerar Relatório de Anomalias
-Execute o script `monitor.py` para detectar anomalias nas transações:
+### 5. Generate Anomaly Report
+Run the `monitor.py` script to detect transaction anomalies:
 
 python monitor.py
 
 
-### 6. Gerar Gráfico de Vendas
+### 6. Generate Sales Chart
 
-Execute o script `grafico_vendas.py` para gerar um gráfico de vendas:
+Run the `grafico_vendas.py` script to generate a sales graph:
 
 python grafico_vendas.py
 
-O gráfico será salvo como `grafico_vendas.png`.
+The graph will be saved as `grafico_vendas.png`.
 
-### Conclusão
+### Conclusion
 
-Com esses componentes, você terá um sistema de monitoramento de transações que detecta anomalias e gera alertas em tempo real, além de fornecer uma visualização dos dados de vendas por hora. O sistema é flexível e pode ser expandido conforme necessário.
+With these components, you will have a transaction monitoring system that detects anomalies and generates real-time alerts, as well as providing a view of hourly sales data. The system is flexible and can be expanded as needed.
