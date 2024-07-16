@@ -51,7 +51,7 @@ def check_anomalies():
     result = cursor.fetchone()
 
     if result[0] > 5:  # Adjust threshold as necessary
-        send_fake_email("tdsantos.cloud@gmail.com", "Alerta de Anomalia", "Uma anomalia foi detectada nas transações.")
+        send_fake_email("xxxxx@xxxxx.com", "Alerta de Anomalia", "Uma anomalia foi detectada nas transações.")
 
     cursor.close()
     conn.close()
