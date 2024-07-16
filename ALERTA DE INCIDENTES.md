@@ -34,7 +34,7 @@ transaction_monitoring/
 
 - Grafana:
 
-![Gráfico de Vendas](image-9.png)
+![Gráfico de Vendas](images/image-9.png)
 
 ## 4. Monitoramento de Anomalias
 
