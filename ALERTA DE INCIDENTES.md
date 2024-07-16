@@ -1,10 +1,10 @@
-Solução para o Desafio: Alerta de Incidente em Transações
+# Solução para o Desafio: Alerta de Incidente em Transações
 
 Para implementar um sistema de monitoramento simples com alerta em tempo real e notificações, seguimos os passos abaixo. A solução inclui um endpoint para receber dados de transação, processamento e análise dos dados, um modelo para detectar anomalias e um sistema para reportar as anomalias automaticamente.
 
-1. Estrutura do Projeto
+## 1. Estrutura do Projeto
 
-1.1. Diretório do Projeto
+### 1.1. Diretório do Projeto
 
 transaction_monitoring/
 │
@@ -17,33 +17,39 @@ transaction_monitoring/
 ├── notification.py
 └── send_request.sh
 
-Dependências
-requirements.txt
 
-Configuração do Banco de Dados
-db_secrets.py
+### 1.2. Dependências
 
-1. Endpoint para Receber Dados de Transação
-endpoint.py
+- `requirements.txt`
 
-2. Consulta SQL, Gráfico de Vendas e Monitoramento de anomalias
+### 1.3. Configuração do Banco de Dados
 
-Grafana:
-![alt text](image-9.png)
+- `db_secrets.py`
 
-3. Monitoramento de Anomalias
+## 2. Endpoint para Receber Dados de Transação
 
-monitor.py
+- `endpoint.py`
 
-4. Sistema de Notificação
+## 3. Consulta SQL, Gráfico de Vendas e Monitoramento de Anomalias
 
-notification.py
+- Grafana:
 
-5. Script para Envio de Requisições de Teste
+![Gráfico de Vendas](image-9.png)
 
-send_request.sh
+## 4. Monitoramento de Anomalias
 
-6. Docker Compose
+- `monitor.py`
 
-docker-compose.yml
+## 5. Sistema de Notificação
+
+- `notification.py`
+
+## 6. Script para Envio de Requisições de Teste
+
+- `send_request.sh`
+
+## 7. Docker Compose
+
+- `docker-compose.yml`
+
 
