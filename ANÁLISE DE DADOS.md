@@ -10,13 +10,13 @@ Os dados dos dois arquivos CSV mostram o número de vendas do POS por hora, perm
 
 #### 1. Tendências Gerais
 
-- **Picos de Vendas:** Observa-se um pico de vendas entre as 10h e 15h em ambos os dias. Por exemplo, hoje, a venda mais alta foi às 10h com 55 vendas no CSV 1 ![csv1](image-2.png)
+- **Picos de Vendas:** Observa-se um pico de vendas entre as 10h e 15h em ambos os dias. Por exemplo, hoje, a venda mais alta foi às 10h com 55 vendas no CSV 1 ![csv1](/images/image-2.png)
 
-- e 43 no CSV 2 ![csv2](image-1.png).
+- e 43 no CSV 2 ![csv2](/images/image-1.png).
   
-- **Queda nas Vendas:** Após as 15h, as vendas começam a diminuir ![alt text](image-3.png), 
+- **Queda nas Vendas:** Após as 15h, as vendas começam a diminuir ![alt text](/images/image-3.png), 
 
-- especialmente no CSV 2, onde houve um zero em várias horas da tarde ![alt text](image-4.png).
+- especialmente no CSV 2, onde houve um zero em várias horas da tarde ![alt text](/images/image-4.png).
 
 #### 2. Comparação entre os CSVs
 
@@ -30,7 +30,7 @@ Os dados dos dois arquivos CSV mostram o número de vendas do POS por hora, perm
 
 #### 3. Métricas Específicas
 
-![alt text](image-5.png)
+![alt text](/images/image-5.png)
 
 #### 4. Análise de Anomalias
 
@@ -46,11 +46,11 @@ A anomalia mais evidente é a drástica queda nas vendas após as 15h no CSV 2, 
 
 Para investigar mais a fundo, podemos fazer uma consulta SQL para calcular a média de vendas por hora e verificar se alguma hora específica teve uma variação extrema:
 
-![alt text](image-6.png)
+![alt text](/images/image-6.png)
 
-![alt text](image-7.png)
+![alt text](/images/image-7.png)
 
-![alt text](image-8.png)
+![alt text](/images/image-8.png)
 
 ### Gráfico de Vendas
 
