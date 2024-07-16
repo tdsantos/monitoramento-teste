@@ -1,50 +1,50 @@
-# Objetivo
+# Goal
 
-O objetivo deste projeto é criar um sistema de monitoramento de transações que registre e analise o status das transações em um banco de dados MySQL, além de enviar alertas em caso de anomalias.
+The objective of this project is to create a transaction monitoring system that records and analyzes the status of transactions in a MySQL database, as well as sending alerts in case of anomalies.
 
-## Análise dos Dados
+## Data analysis
 
-### Comparação Geral
+### General Comparison
 
-Os dados dos dois arquivos CSV mostram o número de vendas do POS por hora, permitindo uma comparação entre as vendas de hoje (today), ontem (yesterday) e a mesma data da semana anterior (same_day_last_week), além da média da última semana (avg_last_week) e da média do último mês (avg_last_month).
+The data from the two CSV files shows the number of POS sales per hour, allowing a comparison between sales from today (today), yesterday (yesterday) and the same date from the previous week (same_day_last_week), in addition to the average from the last week ( avg_last_week) and the average of the last month (avg_last_month).
 
-#### 1. Tendências Gerais
+#### 1. General Trends
 
-- **Picos de Vendas:** Observa-se um pico de vendas entre as 10h e 15h em ambos os dias. Por exemplo, hoje, a venda mais alta foi às 10h com 55 vendas no CSV 1 ![csv1](/images/image-2.png)
+- **Sales Peaks:** A peak in sales is observed between 10am and 3pm on both days. For example, today, the highest sale was at 10am with 55 sales on CSV 1 ![csv1](/images/image-2.png)
 
-- e 43 no CSV 2 ![csv2](/images/image-1.png).
-  
-- **Queda nas Vendas:** Após as 15h, as vendas começam a diminuir ![alt text](/images/image-3.png), 
+- and 43 in CSV 2 ![csv2](/images/image-1.png).
 
-- especialmente no CSV 2, onde houve um zero em várias horas da tarde ![alt text](/images/image-4.png).
+- **Drop in Sales:** After 3pm, sales start to decrease![alt text](/images/image-3.png),
 
-#### 2. Comparação entre os CSVs
+- especially in CSV 2, where there was a zero at several times in the afternoon ![alt text](/images/image-4.png).
 
-- **CSV 1 vs CSV 2:** O CSV 1 geralmente apresenta números de vendas mais altos do que o CSV 2. Isso pode indicar uma diferença na atividade do negócio ou na eficácia das vendas em dias diferentes.
+#### 2. Comparison between CSVs
 
-##### Anomalias Notáveis:
+- **CSV 1 vs CSV 2:** CSV 1 generally has higher sales numbers than CSV 2. This may indicate a difference in business activity or sales effectiveness on different days.
 
-- **CSV 1:** O horário das 10h apresenta um aumento significativo de vendas (55), contrastando com o que seria esperado. Isso sugere uma anomalia, já que está muito acima da média para a maioria das horas.
+##### Notable Anomalies:
 
-- **CSV 2:** A partir das 15h, as vendas caem drasticamente, com zeros, o que também pode indicar uma anomalia ou uma interrupção no serviço.
+- **CSV 1:** The 10am time slot shows a significant increase in sales (55), contrasting with what would be expected. This suggests an anomaly, as it is well above average for most hours.
 
-#### 3. Métricas Específicas
+- **CSV 2:** From 3pm onwards, sales drop drastically, with zeros, which could also indicate an anomaly or an interruption in the service.
+
+#### 3. Specific Metrics
 
 ![alt text](/images/image-5.png)
 
-#### 4. Análise de Anomalias
+#### 4. Anomaly Analysis
 
-##### Anomalia Identificada
+##### Anomaly Identified
 
-A anomalia mais evidente é a drástica queda nas vendas após as 15h no CSV 2, onde as vendas caem a zero. Isso pode ser um indicativo de:
+The most obvious anomaly is the drastic drop in sales after 3pm in CSV 2, where sales drop to zero. This may be an indication of:
 
-- **Interrupção de Sistema:** O sistema POS pode ter enfrentado problemas técnicos após esse horário.
-- **Mudança no Comportamento do Cliente:** Uma mudança no fluxo de clientes ou horário de funcionamento pode ter ocorrido.
-- **Eventos Externos:** Fatores externos como feriados ou eventos na região podem ter impactado as vendas.
+- **System Outage:** The POS system may have experienced technical problems after this time.
+- **Change in Customer Behavior:** A change in customer flow or opening hours may have occurred.
+- **External Events:** External factors such as holidays or events in the region may have impacted sales.
 
-#### 5. Consulta SQL para Análise
+#### 5. SQL Query for Analysis
 
-Para investigar mais a fundo, podemos fazer uma consulta SQL para calcular a média de vendas por hora e verificar se alguma hora específica teve uma variação extrema:
+To investigate further, we can run an SQL query to calculate the average sales per hour and see if any specific hour had an extreme variation:
 
 ![alt text](/images/image-6.png)
 
@@ -52,14 +52,14 @@ Para investigar mais a fundo, podemos fazer uma consulta SQL para calcular a mé
 
 ![alt text](/images/image-8.png)
 
-### Gráfico de Vendas
+### Sales Chart
 
-Um gráfico pode ser gerado para visualizar as vendas ao longo das horas para identificar picos e quedas. Neste caso, utilizamos o código `grafico_vendas.py` para gerar o gráfico.
+A graph can be generated to visualize sales over hours to identify peaks and dips. In this case, we use the code `grafico_vendas.py` to generate the graph.
 
-![Gráfico de Vendas](grafico_vendas.png)
+![Sales Chart](grafico_vendas.png)
 
-## Conclusão
+## Conclusion
 
-- **Pico de Vendas:** O horário das 10h é um ponto de destaque, mostrando um volume de vendas bem acima da média.
-- **Queda Anormal:** A partir das 15h no CSV 2, as vendas caem drasticamente, o que pode ser considerado uma anomalia e requer investigação adicional.
-- **Comparação de Dados:** A análise permite identificar tendências e padrões que podem ser usados para otimizar estratégias de vendas futuras e entender o comportamento do cliente.
+- **Sales Peak:** The 10am time is a highlight, showing a sales volume well above the average.
+- **Abnormal Drop:** From 3pm on CSV 2, sales drop drastically, which can be considered an anomaly and requires further investigation.
+- **Data Comparison:** Analysis allows you to identify trends and patterns that can be used to optimize future sales strategies and understand customer behavior.
