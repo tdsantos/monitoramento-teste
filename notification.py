@@ -5,7 +5,7 @@ from datetime import datetime
 from db_secrets import EMAIL_USER
 
 def send_fake_email(to_email, subject, body):
-    mail_dir = os.path.expanduser('./mail') 
+    mail_dir = os.path.expanduser('~/mail') 
 
     # Criar o diretório se não existir
     os.makedirs(mail_dir, exist_ok=True)

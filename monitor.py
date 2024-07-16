@@ -11,11 +11,11 @@ def send_fake_email(to_email, subject, body):
     msg['From'] = EMAIL_USER
     msg['To'] = to_email
 
-    # Garantinho que o diretório de email exista
-    mail_dir = './mail'
+    # Ensure the mail directory exists
+    mail_dir = '/mail'
     os.makedirs(mail_dir, exist_ok=True)
 
-    # Salva o arquivo de email com um nome único
+    # Save email to a uniquely named text file
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
     filename = f"{mail_dir}/fake_email_{timestamp}.txt"
     with open(filename, 'w') as f:
@@ -50,23 +50,23 @@ def check_anomalies():
     cursor.execute("SELECT COUNT(*) FROM transactions_1 WHERE status IN ('failed', 'reversed', 'denied')")
     result = cursor.fetchone()
 
-    if result[0] > 5:  # Ajustar as métricas conforme necessário
-        send_fake_email("monitoramento@teste.com", "Alerta de Anomalia", "Uma anomalia foi detectada nas transações.")
+    if result[0] > 5:  # Adjust threshold as necessary
+        send_fake_email("tdsantos.cloud@gmail.com", "Alerta de Anomalia", "Uma anomalia foi detectada nas transações.")
 
     cursor.close()
     conn.close()
 
 def main():
-    # Gerar dados aleatórios de transações
+    # Generate sample data
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     status_options = ['approved', 'failed', 'reversed', 'denied']
     status = random.choice(status_options)
     f1 = random.randint(1, 100)
 
-    # Insert transaction
+    # Insert the transaction
     insert_transaction(current_time, status, f1)
 
-    # Check anomalias
+    # Check for anomalies
     check_anomalies()
 
 if __name__ == "__main__":
